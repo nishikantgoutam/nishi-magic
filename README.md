@@ -38,8 +38,8 @@ NISHI installs to:
 - **Local**: `./.claude/`, `./.opencode/`, `./.gemini/`
 
 Installed files:
-- **Skills**: `/nishi:*` commands (15 workflow commands)
-- **Agents**: Researcher, Planner, Executor, Verifier, Debugger
+- **Skills**: `/nishi:*` commands (16 workflow commands)
+- **Agents**: Researcher, Planner, Executor, Verifier, Debugger, Code Reviewer
 - **Prompts**: System prompts for context engineering
 
 ---
@@ -164,6 +164,17 @@ Learn and reuse codebase patterns:
 - **Review Checklists** — Consistent code review criteria
 - **Architecture** — System design patterns
 
+### Code Review & Analysis
+
+Comprehensive code review following industry standards:
+- **Code Quality** — Readability, maintainability, complexity analysis, code smells
+- **Architecture** — SOLID principles, design patterns, modularity
+- **Security** — OWASP Top 10, vulnerability scanning, secret detection
+- **Performance** — Bottleneck identification, optimization opportunities
+- **Best Practices** — Error handling, testing, documentation, API design
+- **Repository Analysis** — Understands your codebase structure and conventions
+- **Actionable Reports** — Prioritized fixes with file:line references and code examples
+
 ---
 
 ## Workflow Commands
@@ -185,6 +196,7 @@ Learn and reuse codebase patterns:
 /nishi:quick <task>      # Ad-hoc task without formal planning
 /nishi:debug             # Systematic debugging with persistence
 /nishi:map-codebase      # Analyze existing architecture before new work
+/nishi:code-review       # Comprehensive code review and analysis
 ```
 
 ### Phase Management
@@ -201,6 +213,12 @@ Learn and reuse codebase patterns:
 ```bash
 /nishi:new-milestone     # Start new development milestone
 /nishi:complete-milestone # Complete and archive current milestone
+```
+
+### Code Quality
+
+```bash
+/nishi:code-review       # Full code review with security, performance, architecture analysis
 ```
 
 ### SDLC Integration
@@ -378,6 +396,24 @@ NISHI will:
 # - Pending phases
 # - Any blockers
 # - Recommended next command
+```
+
+### Code Review
+
+```bash
+# Full repository code review
+/nishi:code-review
+
+# NISHI will:
+# 1. Understand your repository structure and conventions
+# 2. Analyze code quality, architecture, security, and performance
+# 3. Generate a comprehensive report with:
+#    - Critical issues (must fix)
+#    - Important issues (should fix)
+#    - Suggestions (nice to have)
+#    - Strengths (what's done well)
+# 4. Provide actionable recommendations with file:line references
+# 5. Save report to .nishi/reviews/code-review-YYYY-MM-DD.md
 ```
 
 ### SDLC Integration

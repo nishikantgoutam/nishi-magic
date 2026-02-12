@@ -1,0 +1,68 @@
+{
+  "name": "nishi",
+  "version": "1.0.0",
+  "description": "NISHI - Next-level Intelligent System for Holistic Integration. Meta-prompting, context engineering and spec-driven SDLC agent for Claude Code, OpenCode, and Gemini CLI.",
+  "main": "dist/index.js",
+  "type": "module",
+  "bin": {
+    "nishi": "./bin/install.js",
+    "nishi-mcp-server": "./bin/mcp-server.js"
+  },
+  "scripts": {
+    "build": "tsc && npm run build:skills && npm run build:agents",
+    "build:skills": "node scripts/build-skills.js",
+    "build:agents": "node scripts/build-agents.js",
+    "build:watch": "tsc --watch",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "setup": "tsx src/setup.ts",
+    "vault": "tsx src/vault-cli.ts",
+    "test": "tsx src/tests/run.ts",
+    "clean": "rm -rf dist",
+    "prebuild": "npm run clean",
+    "prepublishOnly": "npm run build",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "install:test": "node bin/install.js --claude --local"
+  },
+  "keywords": [
+    "sdlc",
+    "agent",
+    "claude-code",
+    "opencode",
+    "gemini",
+    "ai-assistant",
+    "meta-prompting",
+    "context-engineering",
+    "jira",
+    "confluence",
+    "bitbucket",
+    "mcp",
+    "typescript",
+    "cli",
+    "development-workflow"
+  ],
+  "author": "nishi",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nishi/nishi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nishi/nishi/issues"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.4",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

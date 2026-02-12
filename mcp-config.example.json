@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "nishi": {
+      "command": "npx",
+      "args": ["nishi-mcp-server"],
+      "transport": "stdio",
+      "env": {
+        "NISHI_REPO_PATH": "${workspaceFolder}",
+        "NISHI_LOG_LEVEL": "info"
+      }
+    }
+  }
+}

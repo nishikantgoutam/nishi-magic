@@ -1,0 +1,36 @@
+{
+  "mcpServers": [
+    {
+      "name": "jira",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@anthropic/mcp-server-jira"],
+      "env": {
+        "JIRA_BASE_URL": "",
+        "JIRA_EMAIL": "",
+        "JIRA_API_TOKEN": ""
+      }
+    },
+    {
+      "name": "confluence",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@anthropic/mcp-server-confluence"],
+      "env": {
+        "CONFLUENCE_BASE_URL": "",
+        "CONFLUENCE_EMAIL": "",
+        "CONFLUENCE_API_TOKEN": ""
+      }
+    },
+    {
+      "name": "bitbucket",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@anthropic/mcp-server-bitbucket"],
+      "env": {
+        "BITBUCKET_USERNAME": "",
+        "BITBUCKET_APP_PASSWORD": ""
+      }
+    }
+  ]
+}

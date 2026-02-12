@@ -1,0 +1,14 @@
+node_modules/
+.env
+.vault.enc
+.nishi/
+.planning/
+mcp-servers.json
+*.log
+backup.json
+dist/
+*.tsbuildinfo
+.DS_Store
+Thumbs.db
+*.tmp
+*.temp

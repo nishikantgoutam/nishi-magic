@@ -7,6 +7,8 @@ mcp-servers.json
 *.log
 backup.json
 dist/
+!dist/skills/*.md
+!dist/agents/*.md
 *.tsbuildinfo
 .DS_Store
 Thumbs.db

@@ -3,6 +3,7 @@ node_modules/
 .vault.enc
 .nishi/
 .planning/
+.claude/settings.local.json
 mcp-servers.json
 *.log
 backup.json

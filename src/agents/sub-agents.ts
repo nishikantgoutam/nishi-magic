@@ -1,5 +1,5 @@
 // ============================================================================
-// NISHI – Sub-Agents
+// DEVWEAVER – Sub-Agents
 //
 // Specialized agents for each SDLC domain. The orchestrator delegates to
 // these sub-agents based on the task at hand.
@@ -20,7 +20,7 @@ function getMCPToolNames(keywords: string[]): string[] {
 // 1. FEATURE ANALYSIS AGENT
 // ─────────────────────────────────────────────────────────────────────────────
 async function featureAnalysisAgent(input: { message: string }): Promise<RunAgentResult> {
-  const systemPrompt = `You are NISHI's Feature Analysis Agent — an expert at requirement analysis and feature planning.
+  const systemPrompt = `You are DEVWEAVER's Feature Analysis Agent — an expert at requirement analysis and feature planning.
 
 YOUR RESPONSIBILITIES:
 1. Analyze requirements from text descriptions, diagrams, or wireframes
@@ -68,7 +68,7 @@ OUTPUT: A comprehensive analysis document, optionally with Jira ticket creation.
 // 2. JIRA MANAGEMENT AGENT
 // ─────────────────────────────────────────────────────────────────────────────
 async function jiraAgent(input: { message: string }): Promise<RunAgentResult> {
-  const systemPrompt = `You are NISHI's Jira Management Agent — you handle all Jira-related operations.
+  const systemPrompt = `You are DEVWEAVER's Jira Management Agent — you handle all Jira-related operations.
 
 YOUR RESPONSIBILITIES:
 - Create, update, and manage Jira tickets (Epics, Stories, Tasks, Bugs, Sub-tasks)
@@ -97,7 +97,7 @@ If MCP Jira tools are available, prefer those over the built-in Jira tools.`;
 // 3. CODE ANALYSIS AGENT
 // ─────────────────────────────────────────────────────────────────────────────
 async function codeAnalysisAgent(input: { message: string }): Promise<RunAgentResult> {
-  const systemPrompt = `You are NISHI's Code Analysis Agent — you deeply understand codebases.
+  const systemPrompt = `You are DEVWEAVER's Code Analysis Agent — you deeply understand codebases.
 
 YOUR RESPONSIBILITIES:
 1. Analyze repo structure, frameworks, and patterns
@@ -135,7 +135,7 @@ After analysis, ALWAYS save key findings using skills_save with appropriate cate
 // 4. CODE WRITER AGENT
 // ─────────────────────────────────────────────────────────────────────────────
 async function codeWriterAgent(input: { message: string }): Promise<RunAgentResult> {
-  const systemPrompt = `You are NISHI's Code Writer Agent — you write production-quality code.
+  const systemPrompt = `You are DEVWEAVER's Code Writer Agent — you write production-quality code.
 
 YOUR RESPONSIBILITIES:
 1. First understand the repo by reading skills and analyzing the codebase
@@ -175,7 +175,7 @@ RULES:
 // 5. CODE TEST AGENT
 // ─────────────────────────────────────────────────────────────────────────────
 async function codeTestAgent(input: { message: string }): Promise<RunAgentResult> {
-  const systemPrompt = `You are NISHI's Testing Agent — you write and manage tests.
+  const systemPrompt = `You are DEVWEAVER's Testing Agent — you write and manage tests.
 
 YOUR RESPONSIBILITIES:
 1. Understand the project's testing framework and patterns
@@ -215,7 +215,7 @@ Write comprehensive tests covering:
 // 6. CODE REVIEW AGENT
 // ─────────────────────────────────────────────────────────────────────────────
 async function codeReviewAgent(input: { message: string }): Promise<RunAgentResult> {
-  const systemPrompt = `You are NISHI's Code Review Agent — you provide thorough, constructive code reviews.
+  const systemPrompt = `You are DEVWEAVER's Code Review Agent — you provide thorough, constructive code reviews.
 
 YOUR RESPONSIBILITIES:
 1. Review code for: syntax errors, best practices, security vulnerabilities,
@@ -261,7 +261,7 @@ WORKFLOW:
 // 7. CONFLUENCE / DOCUMENT MANAGEMENT AGENT
 // ─────────────────────────────────────────────────────────────────────────────
 async function documentAgent(input: { message: string }): Promise<RunAgentResult> {
-  const systemPrompt = `You are NISHI's Document Management Agent — you manage Confluence pages and project documentation.
+  const systemPrompt = `You are DEVWEAVER's Document Management Agent — you manage Confluence pages and project documentation.
 
 YOUR RESPONSIBILITIES:
 1. Confluence: get, read, create, update, add comments, delete, merge pages
@@ -299,7 +299,7 @@ If MCP Confluence tools are available, prefer those.`;
 // 8. DIAGRAM GENERATION AGENT
 // ─────────────────────────────────────────────────────────────────────────────
 async function diagramAgent(input: { message: string }): Promise<RunAgentResult> {
-  const systemPrompt = `You are NISHI's Diagram Agent — you create and interpret diagrams.
+  const systemPrompt = `You are DEVWEAVER's Diagram Agent — you create and interpret diagrams.
 
 YOUR RESPONSIBILITIES:
 1. Generate diagrams from requirements (Mermaid syntax):

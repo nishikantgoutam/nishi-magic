@@ -1,7 +1,7 @@
 node_modules/
 .env
 .vault.enc
-.nishi/
+.devweaver/
 .planning/
 .claude/settings.local.json
 mcp-servers.json

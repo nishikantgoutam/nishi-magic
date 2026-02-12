@@ -1,8 +1,8 @@
 // ============================================================================
-// NISHI – MCP (Model Context Protocol) Client
+// DEVWEAVER – MCP (Model Context Protocol) Client
 //
 // Connects to MCP servers (stdio or SSE) and dynamically registers their
-// tools into the NISHI tool registry.
+// tools into the DEVWEAVER tool registry.
 // ============================================================================
 import { spawn, ChildProcess } from 'node:child_process';
 import { request } from '../utils/http.js';

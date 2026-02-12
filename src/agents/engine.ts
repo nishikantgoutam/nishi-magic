@@ -1,5 +1,5 @@
 // ============================================================================
-// NISHI – Agent Engine (Agentic Loop)
+// DEVWEAVER – Agent Engine (Agentic Loop)
 //
 // The core execution loop: sends messages to the LLM, handles tool calls,
 // collects results, and iterates until the task is done.

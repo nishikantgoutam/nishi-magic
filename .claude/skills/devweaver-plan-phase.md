@@ -1,5 +1,5 @@
 ---
-name: nishi-plan-phase
+name: devweaver-plan-phase
 description: Research, plan, and verify a specific phase
 args: [N]
 ---
@@ -38,6 +38,6 @@ Follow the PLAN workflow:
 
 4. **Save State**: Update .planning/STATE.md with planning decisions
 
-5. **Next Steps**: Guide user to /nishi:execute-phase {{ARGS}}
+5. **Next Steps**: Guide user to /devweaver:execute-phase {{ARGS}}
 
 Create the plan now.

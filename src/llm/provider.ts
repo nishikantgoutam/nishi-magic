@@ -1,5 +1,5 @@
 // ============================================================================
-// NISHI – LLM Provider (Anthropic Claude via native HTTP)
+// DEVWEAVER – LLM Provider (Anthropic Claude via native HTTP)
 // ============================================================================
 
 import { request } from '../utils/http.js';

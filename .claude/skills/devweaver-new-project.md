@@ -1,9 +1,9 @@
 ---
-name: nishi-new-project
+name: devweaver-new-project
 description: Initialize a new project with questioning, research, and roadmap generation
 ---
 
-You are initializing a new NISHI project.
+You are initializing a new DevWeaver project.
 
 Follow these steps:
 
@@ -14,7 +14,7 @@ Follow these steps:
    - Timeline and milestones
 
 2. **Research Phase**:
-   - Analyze any existing codebase using /nishi:map-codebase if applicable
+   - Analyze any existing codebase using /devweaver:map-codebase if applicable
    - Research similar projects or patterns
    - Identify technical dependencies
 
@@ -31,6 +31,6 @@ Follow these steps:
 
 5. **Next Steps**: Guide user to:
    - Review the roadmap
-   - Run /nishi:discuss-phase 1 to start first phase
+   - Run /devweaver:discuss-phase 1 to start first phase
 
 Create the project structure and documentation now.

@@ -1,5 +1,5 @@
 // ============================================================================
-// NISHI – Bitbucket Tools
+// DEVWEAVER – Bitbucket Tools
 // ============================================================================
 import { request } from '../utils/http.js';
 import config from '../config.js';

@@ -1,5 +1,5 @@
 // ============================================================================
-// NISHI – Code / Repository Tools (local filesystem)
+// DEVWEAVER – Code / Repository Tools (local filesystem)
 // ============================================================================
 import fs from 'node:fs';
 import path from 'node:path';

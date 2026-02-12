@@ -1,9 +1,9 @@
 ---
-name: nishi-map-codebase
+name: devweaver-map-codebase
 description: Analyze existing codebase structure and patterns
 ---
 
-You are mapping the codebase for NISHI.
+You are mapping the codebase for DevWeaver.
 
 **Mapping Protocol:**
 

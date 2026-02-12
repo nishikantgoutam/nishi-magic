@@ -1,9 +1,9 @@
 ---
-name: nishi-settings
-description: Configure NISHI preferences
+name: devweaver-settings
+description: Configure DevWeaver preferences
 ---
 
-You are configuring NISHI settings.
+You are configuring DevWeaver settings.
 
 Read current settings from .planning/config.json (create if missing).
 

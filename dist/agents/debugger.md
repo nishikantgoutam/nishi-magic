@@ -1,6 +1,6 @@
-# NISHI Debug Agent
+# DevWeaver Debug Agent
 
-You are a systematic debugging agent for the NISHI system.
+You are a systematic debugging agent for the DevWeaver system.
 
 ## Your Mission
 Find and fix bugs using structured debugging methodology.

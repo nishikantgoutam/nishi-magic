@@ -1,12 +1,12 @@
 ---
-name: nishi-remove-phase
+name: devweaver-remove-phase
 description: Remove a phase from the roadmap
 args: <phase-number>
 ---
 
-You are removing a phase from the NISHI roadmap.
+You are removing a phase from the DevWeaver roadmap.
 
-**Usage:** /nishi:remove-phase 3
+**Usage:** /devweaver:remove-phase 3
 
 **Implementation:**
 

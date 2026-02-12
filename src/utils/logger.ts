@@ -1,5 +1,5 @@
 // ============================================================================
-// NISHI – Logger
+// DEVWEAVER – Logger
 // ============================================================================
 
 import type { Logger, LogLevel } from '../types/index.js';
@@ -11,7 +11,7 @@ const LEVELS: Record<LogLevel, number> = {
   error: 3
 };
 
-const currentLevel = LEVELS[(process.env.NISHI_LOG_LEVEL as LogLevel) || 'info'] ?? 1;
+const currentLevel = LEVELS[(process.env.DEVWEAVER_LOG_LEVEL as LogLevel) || 'info'] ?? 1;
 
 const COLORS = {
   reset: '\x1b[0m',

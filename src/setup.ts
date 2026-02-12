@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // ============================================================================
-// NISHI – Interactive Setup Script
+// DEVWEAVER – Interactive Setup Script
 // ============================================================================
 import { createInterface } from 'node:readline';
 import fs from 'node:fs';
@@ -9,7 +9,7 @@ const rl = createInterface({ input: process.stdin, output: process.stdout });
 const ask = (q: string): Promise<string> => new Promise((res) => rl.question(q, res));
 
 async function main(): Promise<void> {
-  console.log('\n\x1b[36m🔧 NISHI Setup\x1b[0m\n');
+  console.log('\n\x1b[36m🔧 DEVWEAVER Setup\x1b[0m\n');
   console.log('This will create a .env file and mcp-servers.json for your project.\n');
 
   const env: Record<string, string> = {};
@@ -17,7 +17,7 @@ async function main(): Promise<void> {
   // LLM
   console.log('\x1b[33m── LLM Configuration ──\x1b[0m');
   env.ANTHROPIC_API_KEY = await ask('Anthropic API Key: ');
-  env.NISHI_LLM_MODEL = (await ask('Model [claude-sonnet-4-20250514]: ')) || 'claude-sonnet-4-20250514';
+  env.DEVWEAVER_LLM_MODEL = (await ask('Model [claude-sonnet-4-20250514]: ')) || 'claude-sonnet-4-20250514';
 
   // Jira
   console.log('\n\x1b[33m── Jira Configuration (leave blank to skip) ──\x1b[0m');
@@ -48,7 +48,7 @@ async function main(): Promise<void> {
 
   // Repo
   console.log('\n\x1b[33m── Repository ──\x1b[0m');
-  env.NISHI_REPO_PATH = (await ask(`Local Repo Path [${process.cwd()}]: `)) || process.cwd();
+  env.DEVWEAVER_REPO_PATH = (await ask(`Local Repo Path [${process.cwd()}]: `)) || process.cwd();
 
   // Write .env
   const envContent = Object.entries(env)
@@ -102,7 +102,7 @@ async function main(): Promise<void> {
   fs.mkdirSync('.nishi/skills/architecture', { recursive: true });
   console.log('✅ Created .nishi/skills directories');
 
-  console.log('\n\x1b[32m🚀 Setup complete! Run "node src/index.js" to start NISHI.\x1b[0m\n');
+  console.log('\n\x1b[32m🚀 Setup complete! Run "node src/index.js" to start DEVWEAVER.\x1b[0m\n');
   console.log('Tips:');
   console.log('  - Load env vars with: export $(cat .env | xargs)');
   console.log('  - Or use: node -r dotenv/config src/index.js');

@@ -1,5 +1,5 @@
 // ============================================================================
-// NISHI – Skills Manager
+// DEVWEAVER – Skills Manager
 // Learns patterns from the repo and stores reusable skills (coding standards,
 // test patterns, review checklists, etc.)
 // ============================================================================
@@ -62,7 +62,7 @@ async function deleteSkill(input: { skillName: string; category?: string }): Pro
 const skillsTools: Tool[] = [
     {
       name: 'skills_list',
-      description: 'List all saved NISHI skills (coding standards, review checklists, test patterns, etc.).',
+      description: 'List all saved DEVWEAVER skills (coding standards, review checklists, test patterns, etc.).',
       input_schema: { type: 'object', properties: {} },
     execute: listSkills as any,
   },

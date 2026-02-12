@@ -1,5 +1,5 @@
 // ============================================================================
-// NISHI – Confluence Tools
+// DEVWEAVER – Confluence Tools
 // ============================================================================
 import { request } from '../utils/http.js';
 import config from '../config.js';
@@ -72,7 +72,7 @@ async function updatePage(input: { pageId: string; title?: string; body: string;
   const payload = {
     type: 'page',
     title: title || (current as { title: string }).title,
-    version: { number: newVersion, message: versionComment || 'Updated by NISHI' },
+    version: { number: newVersion, message: versionComment || 'Updated by DEVWEAVER' },
     body: {
       storage: { value: body, representation: 'storage' },
     },
@@ -136,7 +136,7 @@ async function mergePages(input: { sourcePageIds: string[]; targetPageId: string
   const result = await updatePage({
     pageId: targetPageId,
     body: targetBody,
-    versionComment: `Merged ${sourcePageIds.length} pages via NISHI`,
+    versionComment: `Merged ${sourcePageIds.length} pages via DEVWEAVER`,
   });
 
   return result;

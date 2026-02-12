@@ -1,12 +1,12 @@
 ---
-name: nishi-add-phase
+name: devweaver-add-phase
 description: Add a new phase to the roadmap
 args: <name> <description>
 ---
 
-You are adding a new phase to the NISHI roadmap.
+You are adding a new phase to the DevWeaver roadmap.
 
-**Usage:** /nishi:add-phase "Phase Name" "Description of what this phase will achieve"
+**Usage:** /devweaver:add-phase "Phase Name" "Description of what this phase will achieve"
 
 **Implementation:**
 

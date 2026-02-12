@@ -1,12 +1,12 @@
 {
-  "name": "nishi",
+  "name": "devweaver",
   "version": "1.0.0",
-  "description": "NISHI - Next-level Intelligent System for Holistic Integration. Meta-prompting, context engineering and spec-driven SDLC agent for Claude Code, OpenCode, and Gemini CLI.",
+  "description": "DevWeaver - Weaving together development workflows. Meta-prompting, context engineering and spec-driven SDLC agent for Claude Code, OpenCode, and Gemini CLI.",
   "main": "dist/index.js",
   "type": "module",
   "bin": {
-    "nishi": "./bin/install.js",
-    "nishi-mcp-server": "./bin/mcp-server.js"
+    "devweaver": "./bin/install.js",
+    "devweaver-mcp-server": "./bin/mcp-server.js"
   },
   "scripts": {
     "build": "tsc && npm run build:skills && npm run build:agents",
@@ -46,10 +46,10 @@
   "author": "nishi",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nishi/nishi.git"
+    "url": "https://github.com/nishikantgoutam/devweaver.git"
   },
   "bugs": {
-    "url": "https://github.com/nishi/nishi/issues"
+    "url": "https://github.com/nishikantgoutam/devweaver/issues"
   },
   "license": "MIT",
   "devDependencies": {

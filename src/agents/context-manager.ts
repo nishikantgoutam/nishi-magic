@@ -1,5 +1,5 @@
 // ============================================================================
-// NISHI – Context Manager
+// DEVWEAVER – Context Manager
 //
 // Manages fresh executor contexts to prevent context rot.
 // Spawns specialized agents with clean 200k token contexts.
@@ -104,9 +104,9 @@ export async function executeParallelContexts(
  * Load researcher agent prompt
  */
 function getResearcherPrompt(): string {
-  return `# NISHI Research Agent
+  return `# DEVWEAVER Research Agent
 
-You are a focused research agent for the NISHI system.
+You are a focused research agent for the DEVWEAVER system.
 
 ## Your Mission
 Gather comprehensive information to support planning decisions.
@@ -141,9 +141,9 @@ Focus on quality over quantity.`;
  * Load executor agent prompt
  */
 function getExecutorPrompt(): string {
-  return `# NISHI Execution Agent
+  return `# DEVWEAVER Execution Agent
 
-You are a focused execution agent for the NISHI system.
+You are a focused execution agent for the DEVWEAVER system.
 
 ## Execution Protocol
 
@@ -196,9 +196,9 @@ You are running in a fresh context. Everything you need is in:
  * Load verifier agent prompt
  */
 function getVerifierPrompt(): string {
-  return `# NISHI Verification Agent
+  return `# DEVWEAVER Verification Agent
 
-You are a thorough verification agent for the NISHI system.
+You are a thorough verification agent for the DEVWEAVER system.
 
 ## Verification Protocol
 

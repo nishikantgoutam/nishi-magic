@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 // ============================================================================
-// NISHI - Installation Script
+// DevWeaver - Installation Script
 //
-// Interactive installer for NISHI CLI across Claude Code, OpenCode, and Gemini
+// Interactive installer for DevWeaver CLI across Claude Code, OpenCode, and Gemini
 // ============================================================================
 
 import { createInterface } from 'readline';
@@ -95,7 +95,7 @@ function copyRecursive(src, dest) {
 }
 
 /**
- * Install NISHI to a specific runtime
+ * Install DevWeaver to a specific runtime
  */
 function installToRuntime(runtime, scope) {
   const runtimeInfo = runtimes[runtime];
@@ -139,7 +139,7 @@ function installToRuntime(runtime, scope) {
 
   // Show usage instructions
   if (runtime === 'claude') {
-    log.info('\nTo use NISHI with Claude Code:');
+    log.info('\nTo use DevWeaver with Claude Code:');
     log.info('  /nishi:help              - Show all available commands');
     log.info('  /nishi:new-project       - Initialize a new project with research');
     log.info('  /nishi:quick <task>      - Execute a quick task');
@@ -151,8 +151,8 @@ function installToRuntime(runtime, scope) {
  * Interactive installation
  */
 async function interactiveInstall() {
-  log.header('NISHI Installation');
-  log.info('Welcome to NISHI — Next-level Intelligent System for Holistic Integration');
+  log.header('DevWeaver Installation');
+  log.info('Welcome to DevWeaver — Next-level Intelligent System for Holistic Integration');
 
   // Select runtimes
   console.log('\nSelect which AI coding assistant(s) you use:');
@@ -198,7 +198,7 @@ async function interactiveInstall() {
 
   // Final message
   log.header('Installation Complete!');
-  log.success('NISHI is ready to help you get shit done.');
+  log.success('DevWeaver is ready to help you get shit done.');
 
   if (scope === 'global') {
     log.info('\nRecommended: Run your AI assistant with --dangerously-skip-permissions');
@@ -238,7 +238,7 @@ function nonInteractiveInstall() {
     process.exit(1);
   }
 
-  log.header('NISHI Non-Interactive Installation');
+  log.header('DevWeaver Non-Interactive Installation');
 
   for (const runtime of selectedRuntimes) {
     installToRuntime(runtime, scope);

@@ -1,5 +1,5 @@
 // ============================================================================
-// NISHI Vault - Secure Environment Variable Management
+// DEVWEAVER Vault - Secure Environment Variable Management
 // ============================================================================
 
 import crypto from 'crypto';
@@ -198,7 +198,7 @@ export async function listSecrets(password: string): Promise<string[]> {
  */
 export async function loadEnvironment(options: VaultOptions = {}): Promise<VaultLoadResult> {
   const {
-    vaultPassword = process.env.NISHI_VAULT_PASSWORD,
+    vaultPassword = process.env.DEVWEAVER_VAULT_PASSWORD,
     fallbackToEnv = true,
     warnOnFallback = true
   } = options;

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // ============================================================================
-// NISHI Vault CLI - Manage Encrypted Secrets
+// DEVWEAVER Vault CLI - Manage Encrypted Secrets
 // ============================================================================
 
 import { createInterface } from 'node:readline';
@@ -85,7 +85,7 @@ async function cmdInit(): Promise<void> {
     const secrets = await initializeVault(password);
     console.log(`✓ Vault initialized with ${Object.keys(secrets).length} secrets`);
     console.log('\n⚠️  Important: Store your vault password securely!');
-    console.log('   Set it in environment: export NISHI_VAULT_PASSWORD="your-password"');
+    console.log('   Set it in environment: export DEVWEAVER_VAULT_PASSWORD="your-password"');
   } catch (error) {
     console.error(`❌ Error: ${error instanceof Error ? error.message : String(error)}`);
     process.exit(1);
@@ -273,7 +273,7 @@ async function cmdImport(jsonFile: string | undefined): Promise<void> {
  */
 function showUsage(): void {
   console.log(`
-NISHI Vault CLI - Secure Environment Variable Management
+DEVWEAVER Vault CLI - Secure Environment Variable Management
 
 Usage:
   node vault-cli.js <command> [options]
@@ -311,8 +311,8 @@ Examples:
   node vault-cli.js import backup.json
 
 Environment Variables:
-  NISHI_VAULT_PASSWORD  Set vault password to avoid prompts
-                        Example: export NISHI_VAULT_PASSWORD="your-password"
+  DEVWEAVER_VAULT_PASSWORD  Set vault password to avoid prompts
+                        Example: export DEVWEAVER_VAULT_PASSWORD="your-password"
 `);
 }
 

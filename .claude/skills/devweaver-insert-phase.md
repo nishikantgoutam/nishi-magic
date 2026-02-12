@@ -1,12 +1,12 @@
 ---
-name: nishi-insert-phase
+name: devweaver-insert-phase
 description: Insert a phase at a specific position
 args: <position> <name> <description>
 ---
 
-You are inserting a phase at a specific position in the NISHI roadmap.
+You are inserting a phase at a specific position in the DevWeaver roadmap.
 
-**Usage:** /nishi:insert-phase 3 "Phase Name" "Description"
+**Usage:** /devweaver:insert-phase 3 "Phase Name" "Description"
 
 **Implementation:**
 

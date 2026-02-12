@@ -1,9 +1,9 @@
 ---
-name: nishi-progress
+name: devweaver-progress
 description: Show current project progress and next steps
 ---
 
-You are showing the user their current NISHI progress.
+You are showing the user their current DevWeaver progress.
 
 1. Read .planning/ROADMAP.md to see all phases
 2. Read .planning/STATE.md to see current state

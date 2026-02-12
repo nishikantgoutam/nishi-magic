@@ -1,5 +1,5 @@
 ---
-name: nishi-quick
+name: devweaver-quick
 description: Execute quick ad-hoc task without formal planning
 args: <task>
 ---

@@ -1,5 +1,5 @@
 ---
-name: nishi-execute-phase
+name: devweaver-execute-phase
 description: Execute a phase with atomic commits and verification
 args: <N>
 ---
@@ -34,7 +34,7 @@ You are executing Phase {{ARGS}}.
 5. **Phase Completion**: When all tasks done:
    - Run full phase verification
    - Update .planning/ROADMAP.md
-   - Guide user to /nishi:verify-work {{ARGS}}
+   - Guide user to /devweaver:verify-work {{ARGS}}
 
 **CRITICAL**:
 - ONE commit per task

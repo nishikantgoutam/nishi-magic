@@ -1,8 +1,8 @@
-# NISHI — Next-level Intelligent System for Holistic Integration
+# DevWeaver — Weaving Together Development Workflows
 
 **A meta-prompting, context engineering and spec-driven SDLC agent for Claude Code, OpenCode, and Gemini CLI.**
 
-NISHI prevents context rot through structured workflows, fresh executor contexts, and systematic planning. It integrates Jira, Confluence, and Bitbucket with phase-based development, atomic commits, and built-in verification.
+DevWeaver prevents context rot through structured workflows, fresh executor contexts, and systematic planning. It integrates Jira, Confluence, and Bitbucket with phase-based development, atomic commits, and built-in verification.
 
 ---
 
@@ -11,34 +11,34 @@ NISHI prevents context rot through structured workflows, fresh executor contexts
 ### Quick Install
 
 ```bash
-npx nishi@latest
+npx devweaver@latest
 ```
 
 ### Installation Options
 
 **Interactive Setup:**
 ```bash
-npx nishi@latest
+npx devweaver@latest
 ```
 Select your AI coding assistant (Claude Code, OpenCode, Gemini, or all) and installation scope (global or local).
 
 **Non-Interactive:**
 ```bash
 # Install globally for Claude Code
-npx nishi@latest --claude --global
+npx devweaver@latest --claude --global
 
 # Install locally for all assistants
-npx nishi@latest --all --local
+npx devweaver@latest --all --local
 ```
 
 ### What Gets Installed
 
-NISHI installs to:
+DevWeaver installs to:
 - **Global**: `~/.claude/`, `~/.opencode/`, `~/.gemini/`
 - **Local**: `./.claude/`, `./.opencode/`, `./.gemini/`
 
 Installed files:
-- **Skills**: `/nishi:*` commands (16 workflow commands)
+- **Skills**: `/devweaver:*` commands (16 workflow commands)
 - **Agents**: Researcher, Planner, Executor, Verifier, Debugger, Code Reviewer
 - **Prompts**: System prompts for context engineering
 
@@ -48,7 +48,7 @@ Installed files:
 
 ### Context Engineering
 
-NISHI maintains structured documentation to prevent context degradation:
+DevWeaver maintains structured documentation to prevent context degradation:
 
 - **PROJECT.md** — Vision and direction
 - **REQUIREMENTS.md** — Scoped requirements with phase traceability
@@ -82,7 +82,7 @@ Every task gets its own commit immediately upon successful verification:
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│                      NISHI Orchestrator                       │
+│                      DevWeaver Orchestrator                       │
 │              (Routes tasks to sub-agents)                     │
 ├──────────────────────────────────────────────────────────────┤
 │                    Specialized Agents                         │
@@ -111,15 +111,15 @@ Every task gets its own commit immediately upon successful verification:
 
 ### MCP Server Integration
 
-NISHI provides an **MCP (Model Context Protocol) server** that exposes all NISHI functions as tools for Claude Code:
+DevWeaver provides an **MCP (Model Context Protocol) server** that exposes all DevWeaver functions as tools for Claude Code:
 
 **Available MCP Tools (16 tools):**
-- **Project**: `nishi_init_project`
-- **Phase Management**: `nishi_add_phase`, `nishi_insert_phase`, `nishi_remove_phase`, `nishi_complete_phase`
-- **Milestone Management**: `nishi_new_milestone`, `nishi_complete_milestone`
-- **Documentation**: `nishi_read_roadmap`, `nishi_read_state`, `nishi_read_requirements`, `nishi_read_project`, `nishi_read_config`
-- **State Management**: `nishi_update_state`, `nishi_update_config`
-- **Utilities**: `nishi_get_current_phase`, `nishi_get_progress`
+- **Project**: `devweaver_init_project`
+- **Phase Management**: `devweaver_add_phase`, `devweaver_insert_phase`, `devweaver_remove_phase`, `devweaver_complete_phase`
+- **Milestone Management**: `devweaver_new_milestone`, `devweaver_complete_milestone`
+- **Documentation**: `devweaver_read_roadmap`, `devweaver_read_state`, `devweaver_read_requirements`, `devweaver_read_project`, `devweaver_read_config`
+- **State Management**: `devweaver_update_state`, `devweaver_update_config`
+- **Utilities**: `devweaver_get_current_phase`, `devweaver_get_progress`
 
 **Setup:**
 
@@ -128,9 +128,9 @@ NISHI provides an **MCP (Model Context Protocol) server** that exposes all NISHI
 ```json
 {
   "mcpServers": {
-    "nishi": {
+    "devweaver": {
       "command": "npx",
-      "args": ["nishi-mcp-server"],
+      "args": ["devweaver-mcp-server"],
       "transport": "stdio"
     }
   }
@@ -139,21 +139,21 @@ NISHI provides an **MCP (Model Context Protocol) server** that exposes all NISHI
 
 2. Restart Claude Code to load the MCP server
 
-3. Use NISHI tools directly in Claude Code:
+3. Use DevWeaver tools directly in Claude Code:
 
 ```typescript
-// Claude can now use NISHI tools directly:
-await useTool('nishi_add_phase', {
+// Claude can now use DevWeaver tools directly:
+await useTool('devweaver_add_phase', {
   name: 'Setup',
   description: 'Initial project setup'
 });
 
-await useTool('nishi_get_progress', {});
+await useTool('devweaver_get_progress', {});
 ```
 
 **Benefits:**
 - ✅ **Skills provide workflow guidance** - High-level prompts and user interaction patterns
-- ✅ **MCP tools provide implementation** - Direct access to all NISHI functions
+- ✅ **MCP tools provide implementation** - Direct access to all DevWeaver functions
 - ✅ **Best of both worlds** - Seamless integration with consistent experience
 
 ### Skills System
@@ -182,60 +182,60 @@ Comprehensive code review following industry standards:
 ### Core Workflow
 
 ```bash
-/nishi:new-project       # Initialize with questioning, research, and roadmap
-/nishi:discuss-phase [N] # Capture implementation preferences before planning
-/nishi:plan-phase [N]    # Research, plan, and verify phase
-/nishi:execute-phase <N> # Execute with parallel tasks and atomic commits
-/nishi:verify-work [N]   # User acceptance testing with auto-debugging
-/nishi:progress          # Current status and next steps
+/devweaver:new-project       # Initialize with questioning, research, and roadmap
+/devweaver:discuss-phase [N] # Capture implementation preferences before planning
+/devweaver:plan-phase [N]    # Research, plan, and verify phase
+/devweaver:execute-phase <N> # Execute with parallel tasks and atomic commits
+/devweaver:verify-work [N]   # User acceptance testing with auto-debugging
+/devweaver:progress          # Current status and next steps
 ```
 
 ### Quick Commands
 
 ```bash
-/nishi:quick <task>      # Ad-hoc task without formal planning
-/nishi:debug             # Systematic debugging with persistence
-/nishi:map-codebase      # Analyze existing architecture before new work
-/nishi:code-review       # Comprehensive code review and analysis
+/devweaver:quick <task>      # Ad-hoc task without formal planning
+/devweaver:debug             # Systematic debugging with persistence
+/devweaver:map-codebase      # Analyze existing architecture before new work
+/devweaver:code-review       # Comprehensive code review and analysis
 ```
 
 ### Phase Management
 
 ```bash
-/nishi:add-phase         # Add new phase to roadmap
-/nishi:insert-phase      # Insert phase at position
-/nishi:remove-phase      # Remove phase from roadmap
-/nishi:complete-phase    # Mark phase as complete
+/devweaver:add-phase         # Add new phase to roadmap
+/devweaver:insert-phase      # Insert phase at position
+/devweaver:remove-phase      # Remove phase from roadmap
+/devweaver:complete-phase    # Mark phase as complete
 ```
 
 ### Milestone Management
 
 ```bash
-/nishi:new-milestone     # Start new development milestone
-/nishi:complete-milestone # Complete and archive current milestone
+/devweaver:new-milestone     # Start new development milestone
+/devweaver:complete-milestone # Complete and archive current milestone
 ```
 
 ### Code Quality
 
 ```bash
-/nishi:code-review       # Full code review with security, performance, architecture analysis
+/devweaver:code-review       # Full code review with security, performance, architecture analysis
 ```
 
 ### SDLC Integration
 
 ```bash
-/nishi:jira              # Work with Jira issues
-/nishi:confluence        # Manage Confluence pages
-/nishi:bitbucket         # Interact with Bitbucket repos
-/nishi:sync-jira         # Sync JIRA tickets to project roadmap
+/devweaver:jira              # Work with Jira issues
+/devweaver:confluence        # Manage Confluence pages
+/devweaver:bitbucket         # Interact with Bitbucket repos
+/devweaver:sync-jira         # Sync JIRA tickets to project roadmap
 ```
 
 ### Utilities
 
 ```bash
-/nishi:settings          # Configure NISHI preferences
-/nishi:help              # Show all commands
-/nishi:update            # Check for updates
+/devweaver:settings          # Configure DevWeaver preferences
+/devweaver:help              # Show all commands
+/devweaver:update            # Check for updates
 ```
 
 ---
@@ -251,7 +251,7 @@ Create a `.env` file (see `.env.example`):
 ANTHROPIC_API_KEY=sk-ant-...
 
 # LLM
-NISHI_LLM_MODEL=claude-sonnet-4-20250514
+DEVWEAVER_LLM_MODEL=claude-sonnet-4-20250514
 
 # Jira
 JIRA_BASE_URL=https://yourcompany.atlassian.net
@@ -272,13 +272,13 @@ BITBUCKET_APP_PASSWORD=your-bitbucket-app-password
 BITBUCKET_REPO_SLUG=your-repo
 
 # Optional
-NISHI_REPO_PATH=/path/to/repo
-NISHI_LOG_LEVEL=info
+DEVWEAVER_REPO_PATH=/path/to/repo
+DEVWEAVER_LOG_LEVEL=info
 ```
 
-### NISHI Settings (`.planning/config.json`)
+### DevWeaver Settings (`.planning/config.json`)
 
-Created automatically by `/nishi:new-project` or `/nishi:settings`:
+Created automatically by `/devweaver:new-project` or `/devweaver:settings`:
 
 ```json
 {
@@ -345,10 +345,10 @@ Created automatically by `/nishi:new-project` or `/nishi:settings`:
 
 ```bash
 # Initialize project with research and roadmap
-/nishi:new-project
+/devweaver:new-project
 ```
 
-NISHI will:
+DevWeaver will:
 1. Ask about your project goals, tech stack, and requirements
 2. Research similar projects and best practices
 3. Create `.planning/` directory with structured docs
@@ -359,25 +359,25 @@ NISHI will:
 
 ```bash
 # Discuss implementation approach
-/nishi:discuss-phase 1
+/devweaver:discuss-phase 1
 
 # Create detailed plan with verification
-/nishi:plan-phase 1
+/devweaver:plan-phase 1
 
 # Execute tasks in parallel with fresh contexts
-/nishi:execute-phase 1
+/devweaver:execute-phase 1
 
 # Verify work meets acceptance criteria
-/nishi:verify-work 1
+/devweaver:verify-work 1
 ```
 
 ### Quick Tasks
 
 ```bash
 # No formal planning needed
-/nishi:quick "Add input validation to the login form"
+/devweaver:quick "Add input validation to the login form"
 
-# NISHI will:
+# DevWeaver will:
 # 1. Understand the requirement
 # 2. Find the login form
 # 3. Add validation
@@ -388,7 +388,7 @@ NISHI will:
 ### Checking Progress
 
 ```bash
-/nishi:progress
+/devweaver:progress
 
 # Shows:
 # - Current milestone and phase
@@ -402,9 +402,9 @@ NISHI will:
 
 ```bash
 # Full repository code review
-/nishi:code-review
+/devweaver:code-review
 
-# NISHI will:
+# DevWeaver will:
 # 1. Understand your repository structure and conventions
 # 2. Analyze code quality, architecture, security, and performance
 # 3. Generate a comprehensive report with:
@@ -413,20 +413,20 @@ NISHI will:
 #    - Suggestions (nice to have)
 #    - Strengths (what's done well)
 # 4. Provide actionable recommendations with file:line references
-# 5. Save report to .nishi/reviews/code-review-YYYY-MM-DD.md
+# 5. Save report to .devweaver/reviews/code-review-YYYY-MM-DD.md
 ```
 
 ### SDLC Integration
 
 ```bash
 # Create Jira epic with stories
-/nishi:jira "Create epic for User Auth with stories for login, signup, password reset"
+/devweaver:jira "Create epic for User Auth with stories for login, signup, password reset"
 
 # Update Confluence docs
-/nishi:confluence "Update API docs with new auth endpoints"
+/devweaver:confluence "Update API docs with new auth endpoints"
 
 # Review Bitbucket PR
-/nishi:bitbucket "Review PR #42 and add inline comments"
+/devweaver:bitbucket "Review PR #42 and add inline comments"
 ```
 
 ---
@@ -441,7 +441,7 @@ your-project/
 │   ├── ROADMAP.md                # Progress tracking
 │   ├── STATE.md                  # Decisions and blockers
 │   ├── CODEBASE.md               # Architecture map
-│   ├── config.json               # NISHI settings
+│   ├── config.json               # DevWeaver settings
 │   ├── phase-1/
 │   │   └── PLAN.md               # XML-structured tasks
 │   ├── phase-2/
@@ -462,12 +462,12 @@ your-project/
 
 ### Context Engineering Flow
 
-1. **User runs `/nishi:new-project`**
+1. **User runs `/devweaver:new-project`**
    - Researcher agent gathers requirements
    - Planner creates phased roadmap
    - Documentation system saves to `.planning/`
 
-2. **User runs `/nishi:execute-phase 1`**
+2. **User runs `/devweaver:execute-phase 1`**
    - Reads `.planning/phase-1/PLAN.md`
    - Spawns parallel executor agents in fresh 200k contexts
    - Each executor has full project context from docs
@@ -478,14 +478,14 @@ your-project/
    - Makes atomic git commit if verification passes
    - Updates `.planning/STATE.md`
 
-4. **User runs `/nishi:verify-work 1`**
+4. **User runs `/devweaver:verify-work 1`**
    - Verifier agent checks all acceptance criteria
    - Reports PASS/FAIL with evidence
    - Auto-spawns debugger if failures found
 
 ### Preventing Context Rot
 
-NISHI keeps contexts fresh:
+DevWeaver keeps contexts fresh:
 
 - **Structured Documentation**: All context in `.planning/` docs, not conversation history
 - **Fresh Executors**: Each task runs in a new 200k-token context
@@ -578,9 +578,9 @@ For best results:
 
 **Get Shit Done.**
 
-NISHI is built for developers who want AI assistance without complexity:
+DevWeaver is built for developers who want AI assistance without complexity:
 
-- Simple commands (`/nishi:new-project`, `/nishi:quick`)
+- Simple commands (`/devweaver:new-project`, `/devweaver:quick`)
 - Clear workflows (Discuss → Plan → Execute → Verify)
 - Structured outputs (`.planning/` docs, not scattered notes)
 - Quality results (verification required, atomic commits)
@@ -601,4 +601,4 @@ Inspired by [get-shit-done](https://github.com/gsd-build/get-shit-done/) by TÂC
 
 ---
 
-**Built with NISHI. Get shit done. 🚀**
+**Built with DevWeaver. Get shit done. 🚀**

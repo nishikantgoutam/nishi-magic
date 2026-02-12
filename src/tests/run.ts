@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // ============================================================================
-// NISHI – Test Runner (zero-dependency)
+// DEVWEAVER – Test Runner (zero-dependency)
 // ============================================================================
 
 const PASS = '\x1b[32m✓\x1b[0m';
@@ -20,7 +20,7 @@ function assert(condition: boolean, message: string): void {
 }
 
 async function runTests(): Promise<void> {
-  console.log('\n\x1b[36m🧪 NISHI Test Suite\x1b[0m\n');
+  console.log('\n\x1b[36m🧪 DEVWEAVER Test Suite\x1b[0m\n');
 
   // ── Test: HTTP utility ──────────────────────────────────────────────
   console.log('\x1b[33mHTTP Utility:\x1b[0m');

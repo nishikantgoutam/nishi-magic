@@ -1,12 +1,12 @@
 ---
-name: nishi-new-milestone
+name: devweaver-new-milestone
 description: Start a new development milestone
 args: <name> <version>
 ---
 
-You are creating a new development milestone in NISHI.
+You are creating a new development milestone in DevWeaver.
 
-**Usage:** /nishi:new-milestone "Milestone Name" "v1.0.0"
+**Usage:** /devweaver:new-milestone "Milestone Name" "v1.0.0"
 
 **Implementation:**
 
@@ -39,4 +39,4 @@ The system will:
 - Update ROADMAP.md
 - Log decision in STATE.md
 
-Guide user to start Phase 1 with /nishi:plan-phase 1
+Guide user to start Phase 1 with /devweaver:plan-phase 1

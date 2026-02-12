@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // ============================================================================
-// NISHI – Next-level Intelligent System for Holistic Integration
+// DEVWEAVER – Next-level Intelligent System for Holistic Integration
 //
 // Main entry point: initializes tools, MCP servers, and starts the
 // interactive CLI or processes a single command.
@@ -71,7 +71,7 @@ async function initialize(): Promise<boolean> {
 
   // Validate LLM config
   if (!config.llm.apiKey) {
-    logger.warn('No LLM API key configured! Set ANTHROPIC_API_KEY or NISHI_LLM_API_KEY');
+    logger.warn('No LLM API key configured! Set ANTHROPIC_API_KEY or DEVWEAVER_LLM_API_KEY');
   }
 
   return true;
@@ -85,14 +85,14 @@ type BuiltinCommands = Record<string, BuiltinCommandFn>;
 const BUILTIN_COMMANDS: BuiltinCommands = {
   '/help': () => {
     console.log(`
-\x1b[33mNISHI Commands:\x1b[0m
+\x1b[33mDEVWEAVER Commands:\x1b[0m
   /help                  Show this help
   /tools                 List all registered tools
   /agents                List available sub-agents
   /skills                List saved skills
   /status                Show system status
   /direct <agent> <msg>  Bypass orchestrator, call agent directly
-  /quit                  Exit NISHI
+  /quit                  Exit DEVWEAVER
 
 \x1b[33mExamples:\x1b[0m
   Analyze the codebase and create coding standards
@@ -129,7 +129,7 @@ const BUILTIN_COMMANDS: BuiltinCommands = {
   },
 
   '/status': () => {
-    console.log(`\n\x1b[33mNISHI Status:\x1b[0m`);
+    console.log(`\n\x1b[33mDEVWEAVER Status:\x1b[0m`);
     console.log(`  LLM Provider: ${config.llm.provider} (${config.llm.model})`);
     console.log(`  LLM API Key:  ${config.llm.apiKey ? '✅ configured' : '❌ missing'}`);
     console.log(`  Jira:         ${config.jira.baseUrl ? '✅ ' + config.jira.baseUrl : '❌ not configured'}`);
@@ -166,7 +166,7 @@ async function processInput(
           console.log(`  - ${s.file}: ${s.title}`);
         }
       } else {
-        console.log('\n  No skills saved yet. NISHI will create them as it learns your codebase.\n');
+        console.log('\n  No skills saved yet. DEVWEAVER will create them as it learns your codebase.\n');
       }
       return conversationHistory;
     }

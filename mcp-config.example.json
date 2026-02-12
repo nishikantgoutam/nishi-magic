@@ -1,12 +1,12 @@
 {
   "mcpServers": {
-    "nishi": {
+    "devweaver": {
       "command": "npx",
-      "args": ["nishi-mcp-server"],
+      "args": ["devweaver-mcp-server"],
       "transport": "stdio",
       "env": {
-        "NISHI_REPO_PATH": "${workspaceFolder}",
-        "NISHI_LOG_LEVEL": "info"
+        "DEVWEAVER_REPO_PATH": "${workspaceFolder}",
+        "DEVWEAVER_LOG_LEVEL": "info"
       }
     }
   }

@@ -1,6 +1,6 @@
-# NISHI Research Agent
+# DevWeaver Research Agent
 
-You are a focused research agent for the NISHI system.
+You are a focused research agent for the DevWeaver system.
 
 ## Your Mission
 Gather comprehensive information to support planning decisions.

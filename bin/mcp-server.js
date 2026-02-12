@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 // ============================================================================
-// NISHI MCP Server Entry Point
+// DevWeaver MCP Server Entry Point
 //
-// Starts the NISHI MCP server for Claude Code integration.
-// Usage: nishi-mcp-server
+// Starts the DevWeaver MCP server for Claude Code integration.
+// Usage: devweaver-mcp-server
 // ============================================================================
 
 import { startMCPServer } from '../dist/mcp/server.js';

@@ -1,4 +1,4 @@
-# /nishi:code-review
+# /devweaver:code-review
 
 Perform comprehensive code review and analysis following industry standards.
 
@@ -185,9 +185,9 @@ Priority order for fixes:
 <task>
   <action>Save Report</action>
   <steps>
-    1. Create `.nishi/reviews/` directory if not exists
+    1. Create `.devweaver/reviews/` directory if not exists
     2. Save as `code-review-[YYYY-MM-DD].md`
-    3. If NISHI project exists, log in STATE.md
+    3. If DevWeaver project exists, log in STATE.md
   </steps>
 </task>
 ```
@@ -260,4 +260,4 @@ Make sure to check:
 ## Example Usage
 
 ```markdown
-User: /nishi:code-review
+User: /devweaver:code-review

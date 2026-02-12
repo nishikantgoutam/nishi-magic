@@ -1,5 +1,5 @@
 ---
-name: nishi-jira
+name: devweaver-jira
 description: Work with Jira issues
 args: [command]
 ---

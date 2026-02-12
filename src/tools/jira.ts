@@ -1,5 +1,5 @@
 // ============================================================================
-// NISHI – Jira Tools
+// DEVWEAVER – Jira Tools
 // ============================================================================
 import { request } from '../utils/http.js';
 import config from '../config.js';

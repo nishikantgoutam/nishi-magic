@@ -1,5 +1,5 @@
 // ============================================================================
-// NISHI Configuration
+// DEVWEAVER Configuration
 // ============================================================================
 
 import { loadEnvironment } from './vault.js';
@@ -8,7 +8,7 @@ import type { Config } from './types/index.js';
 // Load environment variables from vault or .env
 try {
   const result = await loadEnvironment({
-    vaultPassword: process.env.NISHI_VAULT_PASSWORD,
+    vaultPassword: process.env.DEVWEAVER_VAULT_PASSWORD,
     fallbackToEnv: true,
     warnOnFallback: true
   });
@@ -23,11 +23,11 @@ try {
 const config: Config = {
   // ── LLM Provider ──────────────────────────────────────────────────────
   llm: {
-    provider: process.env.NISHI_LLM_PROVIDER || 'anthropic',
-    apiKey: process.env.NISHI_LLM_API_KEY || process.env.ANTHROPIC_API_KEY || '',
-    model: process.env.NISHI_LLM_MODEL || 'claude-sonnet-4-20250514',
-    maxTokens: parseInt(process.env.NISHI_LLM_MAX_TOKENS || '4096', 10),
-    baseUrl: process.env.NISHI_LLM_BASE_URL || 'https://api.anthropic.com',
+    provider: process.env.DEVWEAVER_LLM_PROVIDER || 'anthropic',
+    apiKey: process.env.DEVWEAVER_LLM_API_KEY || process.env.ANTHROPIC_API_KEY || '',
+    model: process.env.DEVWEAVER_LLM_MODEL || 'claude-sonnet-4-20250514',
+    maxTokens: parseInt(process.env.DEVWEAVER_LLM_MAX_TOKENS || '4096', 10),
+    baseUrl: process.env.DEVWEAVER_LLM_BASE_URL || 'https://api.anthropic.com',
   },
 
   // ── Jira ──────────────────────────────────────────────────────────────
@@ -62,18 +62,18 @@ const config: Config = {
 
   // ── Local Repo ────────────────────────────────────────────────────────
   repo: {
-    localPath: process.env.NISHI_REPO_PATH || process.cwd(),
+    localPath: process.env.DEVWEAVER_REPO_PATH || process.cwd(),
   },
 
   // ── Skills ────────────────────────────────────────────────────────────
   skills: {
-    directory: process.env.NISHI_SKILLS_DIR || '.nishi/skills',
+    directory: process.env.DEVWEAVER_SKILLS_DIR || '.nishi/skills',
   },
 
   // ── Agent ─────────────────────────────────────────────────────────────
   agent: {
-    maxIterations: parseInt(process.env.NISHI_MAX_ITERATIONS || '25', 10),
-    verbose: process.env.NISHI_VERBOSE === 'true',
+    maxIterations: parseInt(process.env.DEVWEAVER_MAX_ITERATIONS || '25', 10),
+    verbose: process.env.DEVWEAVER_VERBOSE === 'true',
   },
 };
 

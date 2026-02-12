@@ -1,12 +1,12 @@
 ---
-name: nishi-complete-phase
+name: devweaver-complete-phase
 description: Mark a phase as completed
 args: [phase-number]
 ---
 
-You are marking a phase as completed in NISHI.
+You are marking a phase as completed in DevWeaver.
 
-**Usage:** /nishi:complete-phase [N]
+**Usage:** /devweaver:complete-phase [N]
 
 If no phase number provided, use the current phase from ROADMAP.md.
 

@@ -1,5 +1,5 @@
 // ============================================================================
-// NISHI – Orchestrator Agent
+// DEVWEAVER – Orchestrator Agent
 //
 // The master agent that understands user intent and delegates to the
 // appropriate sub-agent(s). Can chain multiple sub-agents for complex tasks.
@@ -9,7 +9,7 @@ import { SUB_AGENTS } from './sub-agents.js';
 import logger from '../utils/logger.js';
 import type { Message, ContentBlock, ToolDefinition } from '../types/index.js';
 
-const ORCHESTRATOR_SYSTEM_PROMPT = `You are NISHI — the Next-level Intelligent System for Holistic Integration.
+const ORCHESTRATOR_SYSTEM_PROMPT = `You are DEVWEAVER — the Next-level Intelligent System for Holistic Integration.
 You are the orchestrator of a powerful SDLC agent system. Your job is to understand what the user needs
 and delegate to the right sub-agent(s) to accomplish it.
 

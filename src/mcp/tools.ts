@@ -1,7 +1,7 @@
 // ============================================================================
-// NISHI – MCP Tools
+// DevWeaver – MCP Tools
 //
-// Exposes NISHI functions as MCP tools.
+// Exposes DevWeaver functions as MCP tools.
 // ============================================================================
 
 import type { Tool } from '../types/index.js';
@@ -23,16 +23,16 @@ import {
 } from '../utils/docs.js';
 
 /**
- * Get all NISHI tools for MCP
+ * Get all DevWeaver tools for MCP
  */
-export function getNishiTools(): Tool[] {
+export function getDevWeaverTools(): Tool[] {
   return [
     // ========================================================================
     // PROJECT INITIALIZATION
     // ========================================================================
     {
-      name: 'nishi_init_project',
-      description: 'Initialize a new NISHI project with .planning/ directory and documentation',
+      name: 'devweaver_init_project',
+      description: 'Initialize a new DevWeaver project with .planning/ directory and documentation',
       input_schema: {
         type: 'object',
         properties: {
@@ -113,7 +113,7 @@ export function getNishiTools(): Tool[] {
     // PHASE MANAGEMENT
     // ========================================================================
     {
-      name: 'nishi_add_phase',
+      name: 'devweaver_add_phase',
       description: 'Add a new phase to the current milestone in the roadmap',
       input_schema: {
         type: 'object',
@@ -156,7 +156,7 @@ export function getNishiTools(): Tool[] {
     },
 
     {
-      name: 'nishi_insert_phase',
+      name: 'devweaver_insert_phase',
       description: 'Insert a phase at a specific position in the roadmap',
       input_schema: {
         type: 'object',
@@ -197,7 +197,7 @@ export function getNishiTools(): Tool[] {
     },
 
     {
-      name: 'nishi_remove_phase',
+      name: 'devweaver_remove_phase',
       description: 'Remove a phase from the roadmap',
       input_schema: {
         type: 'object',
@@ -228,7 +228,7 @@ export function getNishiTools(): Tool[] {
     },
 
     {
-      name: 'nishi_complete_phase',
+      name: 'devweaver_complete_phase',
       description: 'Mark a phase as completed',
       input_schema: {
         type: 'object',
@@ -266,7 +266,7 @@ export function getNishiTools(): Tool[] {
     // MILESTONE MANAGEMENT
     // ========================================================================
     {
-      name: 'nishi_new_milestone',
+      name: 'devweaver_new_milestone',
       description: 'Create a new development milestone',
       input_schema: {
         type: 'object',
@@ -312,7 +312,7 @@ export function getNishiTools(): Tool[] {
     },
 
     {
-      name: 'nishi_complete_milestone',
+      name: 'devweaver_complete_milestone',
       description: 'Complete and archive a milestone',
       input_schema: {
         type: 'object',
@@ -344,7 +344,7 @@ export function getNishiTools(): Tool[] {
     // DOCUMENTATION READING
     // ========================================================================
     {
-      name: 'nishi_read_roadmap',
+      name: 'devweaver_read_roadmap',
       description: 'Read the current roadmap with all milestones and phases',
       input_schema: {
         type: 'object',
@@ -356,7 +356,7 @@ export function getNishiTools(): Tool[] {
         if (!roadmap) {
           return {
             success: false,
-            message: 'No roadmap found. Run nishi_init_project first.',
+            message: 'No roadmap found. Run devweaver_init_project first.',
           };
         }
         return {
@@ -367,7 +367,7 @@ export function getNishiTools(): Tool[] {
     },
 
     {
-      name: 'nishi_read_state',
+      name: 'devweaver_read_state',
       description: 'Read the current project state (decisions, blockers, notes)',
       input_schema: {
         type: 'object',
@@ -379,7 +379,7 @@ export function getNishiTools(): Tool[] {
         if (!state) {
           return {
             success: false,
-            message: 'No state found. Run nishi_init_project first.',
+            message: 'No state found. Run devweaver_init_project first.',
           };
         }
         return {
@@ -390,7 +390,7 @@ export function getNishiTools(): Tool[] {
     },
 
     {
-      name: 'nishi_read_requirements',
+      name: 'devweaver_read_requirements',
       description: 'Read the project requirements',
       input_schema: {
         type: 'object',
@@ -402,7 +402,7 @@ export function getNishiTools(): Tool[] {
         if (!requirements) {
           return {
             success: false,
-            message: 'No requirements found. Run nishi_init_project first.',
+            message: 'No requirements found. Run devweaver_init_project first.',
           };
         }
         return {
@@ -413,7 +413,7 @@ export function getNishiTools(): Tool[] {
     },
 
     {
-      name: 'nishi_read_project',
+      name: 'devweaver_read_project',
       description: 'Read the project vision and direction',
       input_schema: {
         type: 'object',
@@ -425,7 +425,7 @@ export function getNishiTools(): Tool[] {
         if (!project) {
           return {
             success: false,
-            message: 'No project found. Run nishi_init_project first.',
+            message: 'No project found. Run devweaver_init_project first.',
           };
         }
         return {
@@ -436,8 +436,8 @@ export function getNishiTools(): Tool[] {
     },
 
     {
-      name: 'nishi_read_config',
-      description: 'Read NISHI configuration settings',
+      name: 'devweaver_read_config',
+      description: 'Read DevWeaver configuration settings',
       input_schema: {
         type: 'object',
         properties: {},
@@ -456,7 +456,7 @@ export function getNishiTools(): Tool[] {
     // STATE MANAGEMENT
     // ========================================================================
     {
-      name: 'nishi_update_state',
+      name: 'devweaver_update_state',
       description: 'Update project state (add decisions, blockers, notes)',
       input_schema: {
         type: 'object',
@@ -527,8 +527,8 @@ export function getNishiTools(): Tool[] {
     },
 
     {
-      name: 'nishi_update_config',
-      description: 'Update NISHI configuration settings',
+      name: 'devweaver_update_config',
+      description: 'Update DevWeaver configuration settings',
       input_schema: {
         type: 'object',
         properties: {
@@ -569,7 +569,7 @@ export function getNishiTools(): Tool[] {
     // UTILITY TOOLS
     // ========================================================================
     {
-      name: 'nishi_get_current_phase',
+      name: 'devweaver_get_current_phase',
       description: 'Get the current phase number and details',
       input_schema: {
         type: 'object',
@@ -603,7 +603,7 @@ export function getNishiTools(): Tool[] {
     },
 
     {
-      name: 'nishi_get_progress',
+      name: 'devweaver_get_progress',
       description: 'Get overall project progress summary',
       input_schema: {
         type: 'object',

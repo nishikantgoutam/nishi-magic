@@ -1,12 +1,12 @@
 ---
-name: nishi-complete-milestone
+name: devweaver-complete-milestone
 description: Complete and archive current milestone
 args: [version]
 ---
 
-You are completing and archiving a milestone in NISHI.
+You are completing and archiving a milestone in DevWeaver.
 
-**Usage:** /nishi:complete-milestone [version]
+**Usage:** /devweaver:complete-milestone [version]
 
 If no version provided, use current milestone.
 
@@ -40,6 +40,6 @@ The system will:
 **Post-completion:**
 - Congratulate the user! 🎉
 - Suggest creating a git tag: `git tag {version}`
-- Suggest next milestone: /nishi:new-milestone
+- Suggest next milestone: /devweaver:new-milestone
 
 **IMPORTANT:** This archives work. Make sure everything is committed and pushed!

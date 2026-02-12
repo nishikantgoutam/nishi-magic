@@ -1,12 +1,12 @@
 // ============================================================================
-// NISHI – MCP Server
+// DevWeaver – MCP Server
 //
-// Exposes NISHI functions as MCP tools for Claude Code integration.
+// Exposes DevWeaver functions as MCP tools for Claude Code integration.
 // Implements Model Context Protocol (MCP) using stdio transport.
 // ============================================================================
 
 import logger from '../utils/logger.js';
-import { getNishiTools } from './tools.js';
+import { getDevWeaverTools } from './tools.js';
 import type { Tool, ToolInput } from '../types/index.js';
 
 interface JsonRpcRequest {
@@ -34,26 +34,26 @@ interface JsonRpcResponse {
 // }
 
 /**
- * MCP Server for NISHI
+ * MCP Server for DevWeaver
  * Implements stdio transport with JSON-RPC protocol
  */
-export class NishiMCPServer {
+export class DevWeaverMCPServer {
   private tools: Tool[];
   private serverInfo = {
-    name: 'nishi',
+    name: 'devweaver',
     version: '1.0.0',
   };
 
   constructor() {
-    this.tools = getNishiTools();
-    logger.info(`NISHI MCP Server initialized with ${this.tools.length} tools`);
+    this.tools = getDevWeaverTools();
+    logger.info(`DevWeaver MCP Server initialized with ${this.tools.length} tools`);
   }
 
   /**
    * Start the MCP server with stdio transport
    */
   start(): void {
-    logger.info('Starting NISHI MCP Server on stdio...');
+    logger.info('Starting DEVWEAVER MCP Server on stdio...');
 
     // Read from stdin line by line
     let buffer = '';
@@ -72,16 +72,16 @@ export class NishiMCPServer {
     });
 
     process.stdin.on('end', () => {
-      logger.info('NISHI MCP Server shutting down...');
+      logger.info('DEVWEAVER MCP Server shutting down...');
       process.exit(0);
     });
 
     process.on('SIGINT', () => {
-      logger.info('NISHI MCP Server interrupted');
+      logger.info('DEVWEAVER MCP Server interrupted');
       process.exit(0);
     });
 
-    logger.success('NISHI MCP Server started and listening on stdio');
+    logger.success('DEVWEAVER MCP Server started and listening on stdio');
   }
 
   /**
@@ -287,6 +287,6 @@ export class NishiMCPServer {
  * Start the MCP server
  */
 export function startMCPServer(): void {
-  const server = new NishiMCPServer();
+  const server = new DevWeaverMCPServer();
   server.start();
 }

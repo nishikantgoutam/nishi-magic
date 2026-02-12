@@ -1,5 +1,5 @@
 // ============================================================================
-// NISHI – HTTP Client (pure Node.js, no external dependencies)
+// DEVWEAVER – HTTP Client (pure Node.js, no external dependencies)
 // ============================================================================
 
 import http from 'node:http';
